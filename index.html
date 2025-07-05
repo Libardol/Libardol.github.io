@@ -1,1 +1,379 @@
-"Landing" 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Email Marketing - Libardo López</title>
+    <style>
+        /* Reset para clientes de email */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            -webkit-font-smoothing: antialiased;
+            width: 100% !important;
+            min-height: 100% !important;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px 25px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .content {
+            padding: 25px;
+        }
+        
+        .pain-point {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .solution-box {
+            background-color: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .visual-element {
+            background-color: #f8f9fa;
+            border: 2px dashed #6c757d;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+            transition: transform 0.2s;
+            font-size: 18px;
+            min-width: 250px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .trust-elements {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .signature {
+            border-top: 1px solid #dee2e6;
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+        
+        .mobile-friendly {
+            font-size: 16px;
+        }
+        
+        /* Tabla responsive para móviles */
+        .responsive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        
+        .responsive-table th,
+        .responsive-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+        
+        .responsive-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        /* Contenedor para desplazamiento horizontal en tablas */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Estilos para móviles */
+        @media screen and (max-width: 640px) {
+            .email-container {
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            .header {
+                padding: 20px 15px;
+                border-radius: 0;
+            }
+            
+            .header h1 {
+                font-size: 24px !important;
+                line-height: 1.3;
+            }
+            
+            .header p {
+                font-size: 16px !important;
+            }
+            
+            .content {
+                padding: 15px;
+            }
+            
+            .cta-button {
+                display: block;
+                width: 100%;
+                padding: 15px;
+                font-size: 16px;
+                min-width: auto;
+            }
+            
+            .mobile-friendly {
+                font-size: 14px;
+            }
+            
+            .pain-point, 
+            .solution-box, 
+            .visual-element, 
+            .trust-elements {
+                margin: 15px 0;
+                padding: 12px;
+            }
+            
+            .signature {
+                padding-top: 15px;
+                margin-top: 20px;
+            }
+            
+            .signature img {
+                width: 80px !important;
+            }
+            
+            .signature td {
+                display: block;
+                width: 100% !important;
+                padding-right: 0 !important;
+                padding-bottom: 15px;
+            }
+            
+            .signature table {
+                width: 100%;
+            }
+            
+            /* Ocultar encabezados de tabla en móviles */
+            .responsive-table thead {
+                display: none;
+            }
+            
+            .responsive-table, 
+            .responsive-table tbody, 
+            .responsive-table tr, 
+            .responsive-table td {
+                display: block;
+                width: 100%;
+            }
+            
+            .responsive-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+            
+            .responsive-table td {
+                border: none;
+                border-bottom: 1px solid #eee;
+                position: relative;
+                padding-left: 50%;
+            }
+            
+            .responsive-table td:last-child {
+                border-bottom: none;
+            }
+            
+            .responsive-table td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                font-weight: bold;
+                width: 45%;
+                white-space: nowrap;
+            }
+        }
+        
+        /* Estilos para tablets */
+        @media screen and (min-width: 641px) and (max-width: 768px) {
+            .email-container {
+                margin: 0 20px;
+            }
+            
+            .cta-button {
+                padding: 15px 20px;
+                font-size: 16px;
+            }
+            
+            .responsive-table th,
+            .responsive-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+        
+        /* Ajustes para Outlook */
+        @media screen and (min-width:0\0) {
+            .email-container {
+                width: 600px !important;
+            }
+        }
+        
+        /* Estilos para enlaces */
+        a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1 style="margin: 0; font-size: 32px;">¿Tu crecimiento devora efectivo?</h1>
+            <p style="margin: 10px 0 0 0; opacity: 0.9; font-size: 18px;">La hoja de ruta financiera que convierte el caos en crecimiento rentable</p>
+        </div>
+        
+        <div class="content mobile-friendly">
+            <p><strong>Hola,</strong></p>
+            
+            <p>Felicidades por llegar donde el 96% de los empresarios no llegan: <strong>tener tracción real</strong>. Pero ahora enfrentas el dilema que desvela a todo empresario exitoso:</p>
+            
+            <div class="pain-point">
+                <strong>🔥 El Problema del Crecimiento Rentable:</strong><br>
+                Cada nuevo cliente, cada contratación, cada expansión... ¿Por qué sientes que tu crecimiento devora efectivo en lugar de generarlo?
+            </div>
+            
+            <p>Has dominado el producto. Has encontrado mercado. Pero ahora necesitas dominar <strong>los números que sostienen tu crecimiento</strong>.</p>
+            
+            <div class="visual-element"> 
+                <h3 style="font-size: 22px; margin-bottom: 15px;">Flujo del Crecimiento Rentable</h3>
+                <p><strong>Cómo los emprendedores exitosos se transforman:</strong></p>
+                <p><img src="https://i.imgur.com/RV0u1DR.png" alt="Flujo de crecimiento rentable" style="max-width:100%; height:auto; display: block; margin: 0 auto;"></p>
+                <p style="margin-top: 15px;"><strong>Caos Financiero → Claridad de Números → Crecimiento que Genera Caja</strong></p>
+            </div>
+            
+            <p>Después de 10+ años acompañando a cientos de emprendedores (desde startups hasta empresas en Serie A/B), he identificado que el 90% de los bloqueos de crecimiento tienen raíz en <strong>4 pilares financieros mal gestionados</strong>:</p>
+            
+            <div class="solution-box">
+                <h3 style="font-size: 22px; margin-bottom: 15px;">Los 4 Pilares del Crecimiento Financiero Sostenible</h3>
+                
+<div style="margin: 20px 0;">
+                                <div class="visual-element"> 
+                <h2 style="font-size: 22px; margin-bottom: 15px;">Tabla de Diagnostico</h2>
+                
+                <p><img src="https://i.imgur.com/geTEU8j.png alt="Flujo de crecimien" style="max-width:100%; height:auto; display: block; margin: 0 auto;"></p>
+                <p style="margin-top: 15px;"><strong>Caos Financiero → Claridad de Números → Crecimiento que Genera Caja</strong></p>
+                </div>
+                </div>
+                
+                <p><strong>Mi metodología convierte estos pilares en tu ventaja competitiva:</strong></p>
+                <ul style="padding-left: 20px; margin: 15px 0;">
+                    <li style="margin-bottom: 10px;"><strong>Flujo de Caja Predictivo:</strong> Saber exactamente cuándo y cuánto efectivo generarás</li>
+                    <li style="margin-bottom: 10px;"><strong>Modelos Financieros con IA:</strong> Escenarios claros para decisiones sin miedo</li>
+                    <li style="margin-bottom: 10px;"><strong>KPIs que Importan:</strong> Métricas que realmente guían tu crecimiento</li>
+                    <li><strong>Roadmap de Escalabilidad:</strong> Plan claro para los próximos 12-36 meses</li>
+                </ul>
+            </div>
+            
+            <div class="trust-elements">
+                <h3 style="font-size: 22px; margin-bottom: 15px;">Resultados Reales de Emprendedores como Tú</h3>
+                <p style="margin-bottom: 8px;"><strong>✅</strong> Optimización del runway de 8 a 14 meses sin capital adicional</p>
+                <p style="margin-bottom: 8px;"><strong>✅</strong> Reducción del ciclo de conversión de efectivo de 45 a 22 días</p>
+                <p style="margin-bottom: 15px;"><strong>✅</strong> Incremento de EBITDA en 35% con el mismo nivel de ventas</p>
+                <p><em>*Experiencia: 10+ años como consultor, Banco Santander, Banco de Occidente, +100 empresas acompañadas</em></p>
+            </div>
+            
+            <p><strong>Sé que tu tiempo es oro.</strong> Por eso no te pido un gran compromiso inicial.</p>
+            
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://www.evolucion-financiera.com.co/ContactPage/" class="cta-button">
+                    Evaluación Financiera Inicial (15 min)
+                </a>
+                <p style="margin: 10px 0; font-size: 14px; color: #6c757d;">
+                    Identifica cuál pilar está frenando tu crecimiento rentable
+                </p>
+            </div>
+            
+            <p>En estos 15 minutos identificaremos:</p>
+            <ul style="padding-left: 20px; margin: 15px 0;">
+                <li style="margin-bottom: 8px;">Cuál de los 4 pilares está siendo tu mayor cuello de botella</li>
+                <li style="margin-bottom: 8px;">Una acción específica que puedes implementar esta semana</li>
+                <li>Si mi metodología puede ayudarte a desbloquear tu próximo nivel</li>
+            </ul>
+            
+            <div class="signature" style="font-family: Arial, sans-serif; line-height: 1.4;">
+                <table style="width: 100%; max-width: 600px;">
+                    <tr>
+                    <td style="vertical-align: top; padding-right: 15px;">
+                        <a href="https://www.linkedin.com/in/libardo-l%C3%B3pez-6952141a1" target="_blank">
+                            <img src="https://i.imgur.com/hm5t0Cf.png" alt="Libardo López" width="100" style="border-radius: 50%; max-width: 100%; height: auto;">
+                        </a>
+                    </td>
+                        <td style="vertical-align: top;">
+                            <p style="margin: 0 0 5px 0;"><strong>Libardo López</strong></p>
+                            <p style="margin: 0 0 5px 0;">Consultor en Crecimiento Financiero Sostenible</p>
+                            <p style="margin: 0 0 5px 0;">🌐 <a href="https://www.evolucion-financiera.com.co" target="_blank">www.evolucion-financiera.com.co</a></p>
+                            <p style="margin: 0;">🌐 <a href="https://www.siiwa.app" target="_blank">www.siiwa.app</a></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <p style="font-size: 12px; color: #6c757d; margin-top: 20px;">
+                <em>P.D. Los números solo cuentan una historia valiosa cuando sabemos cómo leerla y convertirla en acción. Mi misión es que tu crecimiento sea rentable, no solo visible.</em>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
